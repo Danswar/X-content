@@ -1,4 +1,10 @@
 on: [push, pull_request]
+
+permissions:
+  checks: write
+  contents: read
+
+
 name: Post content on X
 jobs:
   preview:
