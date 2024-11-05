@@ -1,5 +1,10 @@
-on: [push, pull_request]
 name: Post content on X
+on: [push, pull_request]
+
+permissions:
+  checks: write
+  contents: read
+
 jobs:
   preview:
     name: Preview
