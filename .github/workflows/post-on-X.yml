@@ -2,8 +2,7 @@ on: [push, pull_request]
 
 permissions:
   checks: write
-  contents: read
-  pull-requests: read
+  contents: write
 
 
 name: Post content on X
@@ -14,7 +13,7 @@ jobs:
     if: github.event_name == 'pull_request'
     steps:
       - uses: actions/checkout@v3
-      - uses: Danswar/post-X-tweet-action@v4.0.2
+      - uses: Danswar/post-X-tweet-action@v4.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   tweet:
@@ -25,7 +24,7 @@ jobs:
       - name: checkout main
         uses: actions/checkout@v3
       - name: Tweet
-        uses: Danswar/post-X-tweet-action@v4.0.2
+        uses: Danswar/post-X-tweet-action@v4.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
