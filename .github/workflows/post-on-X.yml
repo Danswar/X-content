@@ -3,6 +3,7 @@ on: [push, pull_request]
 permissions:
   checks: write
   contents: read
+  pull-requests: read
 
 
 name: Post content on X
